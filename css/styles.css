@@ -2,14 +2,20 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
   }
   
-  #new-grid-button {
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  #new-grid-button,
+  #random-color-button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #4CAF50;
@@ -19,26 +25,30 @@ body {
     cursor: pointer;
   }
   
-  #new-grid-button:hover {
+  #new-grid-button:hover,
+  #random-color-button:hover {
     background-color: #45a049;
+  }
+  
+  #color-picker {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
   }
   
   .container {
     display: flex;
     flex-wrap: wrap;
-    width: 640px; /* Taille totale du conteneur */
+    width: 640px;
     height: 640px;
-    border: 2px solid black; /* Bordure du conteneur */
+    border: 2px solid black;
   }
   
   .grid-square {
-    flex: 0 0 calc(100% / 16); /* Divise la largeur en 16 parts égales */
-    height: calc(640px / 16); /* Assure une hauteur égale à la largeur */
-    border: 1px solid black; /* Bordure visible autour des carrés */
-    box-sizing: border-box; /* Inclut la bordure dans les dimensions */
-  }
-  
-  .grid-square.hovered {
-    background-color: black; /* Couleur de survol */
+    flex: 0 0 calc(100% / 16);
+    height: calc(640px / 16);
+    border: 1px solid black;
+    box-sizing: border-box;
   }
   
