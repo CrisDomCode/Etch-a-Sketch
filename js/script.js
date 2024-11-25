@@ -3,8 +3,18 @@ const container                         = document.querySelector('.container');
 const newGridButton                     = document.querySelector('#new-grid-button');
 const colorPicker                       = document.querySelector('#color-picker');
 const randomColorButton                 = document.querySelector('#random-color-button');
+const resetGridButton                   = document.querySelector('#reset-grid-button');
+
 
 let useRandomColors                     = false; // Flag to track color mode
+
+// Function to reset all grid colors to white
+function resetGridColors() {
+    const squares = document.querySelectorAll('.grid-square');
+    squares.forEach(square => {
+      square.style.backgroundColor = 'white';
+    });
+}
 
 // Function to generate a random RGB color
 function getRandomColor() {
@@ -56,6 +66,9 @@ randomColorButton.addEventListener('click', () => {
   useRandomColors                       = !useRandomColors; // Toggle random color mode
   randomColorButton.textContent         = useRandomColors ? 'Disable Random Colors' : 'Randomize Colors';
 });
+
+// Event listener for the "Reset Grid" button
+resetGridButton.addEventListener('click', resetGridColors);
 
 // Initialize with a default 16x16 grid
 createGrid(16);
