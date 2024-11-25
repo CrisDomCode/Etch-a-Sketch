@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px; /* Taille totale du conteneur */
+    height: 640px;
+    border: 2px solid black; /* Bordure du conteneur */
+  }
+  
+  .grid-square {
+    flex: 0 0 calc(100% / 16); /* Divise la largeur en 16 parts égales */
+    height: calc(640px / 16); /* Assure une hauteur égale à la largeur */
+    border: 1px solid black; /* Bordure visible autour des carrés */
+    box-sizing: border-box; /* Inclut la bordure dans les dimensions */
+  }
+  
+  .grid-square.hovered {
+    background-color: black; /* Couleur de survol */
+  }
